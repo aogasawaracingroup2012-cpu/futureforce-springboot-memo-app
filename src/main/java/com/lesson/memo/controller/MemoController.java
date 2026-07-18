@@ -44,6 +44,7 @@ public class MemoController {
     @GetMapping("/search")
     public String search(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
         List<Memo> memos;
+        keyword = keyword.replaceAll("　", " ").trim();
         
         if(keyword != null && !keyword.isEmpty()) {
         	memos = memoRepository.findByTitleContainingOrContentContaining(keyword, keyword);
