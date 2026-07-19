@@ -544,3 +544,8 @@ form.list-search button {
 	width: 4rem;
 	border-radius: 0 var(--radius) var(--radius) 0;
 }
+.footer.logout {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: end;
+}
