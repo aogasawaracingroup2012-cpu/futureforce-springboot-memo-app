@@ -24,23 +24,26 @@ public class Admin {
     private Long id;
     
     @NotBlank(message = "姓を入力してください")
-    private String last_name;
+    @Column(nullable = false)
+    private String lastName;
     
     @NotBlank(message = "名を入力してください")
-    private String first_name;
+    @Column(nullable = false)
+    private String firstName;
     
     @NotBlank(message = "メールアドレスを入力してください")
-    @Column(unique = true)
+    @Column(nullable = false , unique = true)
     private String email;
     
     @NotBlank(message = "パスワードを入力してください")
+    @Column(nullable = false)
     @ToString.Exclude
     private String password;
     
     @CreationTimestamp
     @Column(updatable = false)
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 }

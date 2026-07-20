@@ -14,8 +14,13 @@
 	<div class="container">
 		<div class="header">
 			<h1 class="app-title" th:text="${memo.id} != null ? 'メモ編集' : 'メモ作成'"></h1>
-			<a th:href="${memo.id} != null ? @{|/memo/detail/${memo.id}|}  : @{/memo}" class="btn btn-outline"><i
-					class="ri-arrow-left-line"></i> 戻る</a>
+			<div class="header-right">
+				<form th:action="@{/admin/logout}" method="post">
+					<button type="submit" class="btn">ログアウト</button>
+				</form>
+				<a th:href="${memo.id} != null ? @{|/memo/detail/${memo.id}|}  : @{/memo}" class="btn btn-outline"><i
+						class="ri-arrow-left-line"></i> 戻る</a>
+			</div>
 		</div>
 
 		<div class="note-form-card">
@@ -49,11 +54,6 @@
 				<div class="form-button-container">
 					<button type="submit" class="btn btn-primary" th:text="${memo.id} != null ? '更新' : '作成'">作成</button>
 				</div>
-			</form>
-		</div>
-		<div class="footer logout">
-			<form th:action="@{/admin/logout}" method="post">
-				<button type="submit">ログアウト</button>
 			</form>
 		</div>
 	</div>

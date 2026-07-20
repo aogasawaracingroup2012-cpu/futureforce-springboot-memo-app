@@ -18,14 +18,14 @@
 			<div>
 				<div style="display: flex;">
 					<label>姓：
-						<input type="text" id="last-name" th:field="*{last_name}">
+						<input type="text" id="last-name" th:field="*{lastName}">
 					</label>
 					<label>名：
-						<input type="text" id="first-name" th:field="*{first_name}">
+						<input type="text" id="first-name" th:field="*{firstName}">
 					</label>
 				</div>
-				<div th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}" class="error-message"></div>
-				<div th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}" class="error-message"></div>
+				<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-message"></div>
+				<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-message"></div>
 			</div>
 			<div>
 				<label for="email">メールアドレス：</label>
